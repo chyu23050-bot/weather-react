@@ -1,8 +1,11 @@
+/* 画面全体の設定 */
 body {
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  text-align: center;
+  margin: 0;
+  padding: 0;
   color: #333;
-  padding: 20px;
+  
+  /* 背景画像の設定 */
   background-color: #f0f0f0;
   background-size: cover;
   background-position: center;
@@ -10,10 +13,27 @@ body {
   background-attachment: fixed;
   transition: background-image 1s ease;
   min-height: 100vh;
-  margin: 0;
 }
 
-/* 文字が見やすくなるように */
+/* Reactの入れ物 */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+}
+
+/* アプリ本体の幅制限 */
+.App {
+  width: 100%;
+  max-width: 800px; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 文字の影 */
 h1, h2, h3, p {
   text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
@@ -33,13 +53,14 @@ h1, h2, h3, p {
 }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* 天気カード */
+/* 天気カード（現在の天気） */
 .weather-card {
   margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   max-width: 400px;
+  /* フレックスボックスで中央揃え */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,15 +82,26 @@ h1, h2, h3, p {
   font-weight: bold;
 }
 
-/* 予報テーブル */
+/* 予報テーブルエリア */
 .forecast-wrap {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 20px;
-  max-width: 600px;
+  width: 100%;
   margin: 30px auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 12px; border-bottom: 1px solid #ddd; }
+
+/* テーブル自体の設定 */
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin: 0 auto;
+}
+th, td { 
+  padding: 12px; 
+  border-bottom: 1px solid #ddd;
+  text-align: center; 
+}
 th { background-color: #f9f9f9; border-radius: 5px; }

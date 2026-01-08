@@ -7,7 +7,7 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [placeName, setPlaceName] = useState("");
 
-  const API_KEY = "1e3ac7de64cf893df650e32029cfcd8f"; // ★ここを書き換え！
+  const API_KEY = "1e3ac7de64cf893df650e32029cfcd8f"; 
 
   // 画面が表示された時に一度だけ実行される処理
   useEffect(() => {
@@ -72,7 +72,7 @@ function App() {
         </div>
       )}
 
-      <h1>天気予報アプリ (React版)</h1>
+      <h1>天気予報アプリ</h1>
 
       {/* データがある時だけ表示 */}
       {weatherData && (
